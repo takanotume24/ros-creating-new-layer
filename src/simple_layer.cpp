@@ -47,9 +47,12 @@ void SimpleLayer::updateCosts(costmap_2d::Costmap2D& master_grid, int min_i, int
 {
   if (!enabled_)
     return;
+
+
   unsigned int mx;
   unsigned int my;
   if(master_grid.worldToMap(mark_x_, mark_y_, mx, my)){
+    printf("update costs\n");
     master_grid.setCost(mx, my, LETHAL_OBSTACLE);
   }
 }
