@@ -30,8 +30,8 @@ void SimpleLayer::reconfigureCB(costmap_2d::GenericPluginConfig &config, uint32_
 void SimpleLayer::updateBounds(double robot_x, double robot_y, double robot_yaw, double* min_x,
                                            double* min_y, double* max_x, double* max_y)
 {
-//   if (!enabled_)
-//     return;
+  if (!enabled_)
+    return;
 
   mark_x_ = robot_x + cos(robot_yaw);
   mark_y_ = robot_y + sin(robot_yaw);
@@ -45,8 +45,8 @@ void SimpleLayer::updateBounds(double robot_x, double robot_y, double robot_yaw,
 void SimpleLayer::updateCosts(costmap_2d::Costmap2D& master_grid, int min_i, int min_j, int max_i,
                                           int max_j)
 {
-//   if (!enabled_)
-//     return;
+  if (!enabled_)
+    return;
   unsigned int mx;
   unsigned int my;
   if(master_grid.worldToMap(mark_x_, mark_y_, mx, my)){

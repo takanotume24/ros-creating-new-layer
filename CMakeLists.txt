@@ -122,6 +122,7 @@ include_directories(
 
 ## Declare a C++ library
 add_library(simple_layer src/simple_layer.cpp)
+add_library(grid_layer src/grid_layer.cpp)
 
 ## Add cmake target dependencies of the library
 ## as an example, code may need to be generated before libraries
