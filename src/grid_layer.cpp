@@ -59,8 +59,10 @@ void GridLayer::updateCosts(costmap_2d::Costmap2D& master_grid, int min_i,
   for (int j = min_j; j < max_j; j++) {
     for (int i = min_i; i < max_i; i++) {
       int index = getIndex(i, j);
-      if (costmap_[index] == NO_INFORMATION) continue;
-      master_grid.setCost(i, j, costmap_[index]);
+      // if (costmap_[index] == NO_INFORMATION) continue;
+      if (i % 10 == 0 && j % 10 == 0) {
+        master_grid.setCost(i, j, 250);
+      }
     }
   }
 }
